@@ -5,30 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invadersplay - El clásico reinventado</title>
     <style>
+        :root {
+            --bg-color: #f4f4f9;
+            --text-color: #333;
+            --header-bg: #2c3e50;
+            --card-bg: white;
+            --accent-color: #3498db;
+            --heading-color: #2c3e50;
+            --main-bg: white;
+        }
+        body.dark-mode {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --header-bg: #1a252f;
+            --card-bg: #1e1e1e;
+            --accent-color: #5dade2;
+            --heading-color: #5dade2;
+            --main-bg: linear-gradient(to bottom, #2c3e50, #000000);
+        }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: var(--text-color);
+            margin: 0;
+            background-color: var(--bg-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #f4f4f9;
         }
         header {
             text-align: center;
             margin-bottom: 20px;
-            background-color: #2c3e50;
+            background-color: var(--header-bg);
             color: white;
             padding: 30px;
-            border-radius: 8px;
         }
         h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: clamp(2rem, 5vw, 3.5em);
         }
         h2 {
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
+            color: var(--heading-color);
+            border-bottom: 2px solid var(--accent-color);
             padding-bottom: 10px;
             margin-top: 30px;
         }
@@ -40,14 +61,14 @@
             padding: 0;
         }
         li {
-            background: white;
+            background: var(--card-bg);
             margin: 10px 0;
             padding: 15px;
-            border-left: 5px solid #3498db;
+            border-left: 5px solid var(--accent-color);
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         strong {
-            color: #2980b9;
+            color: var(--accent-color);
         }
         .banner {
             margin-bottom: 40px;
@@ -60,20 +81,28 @@
             height: auto;
             display: block;
         }
+        main {
+            background: var(--main-bg);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
         .header-title {
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
         }
         .logo {
-            width: 70px;
+            width: clamp(60px, 15vw, 100px);
             height: auto;
-            margin-right: 30px;
+            margin-right: clamp(15px, 3vw, 30px);
+            border-radius: 15px;
         }
         .lang-buttons {
             margin-top: 15px;
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
+            flex-wrap: wrap;
             gap: 10px;
         }
         .lang-btn {
@@ -91,6 +120,29 @@
             color: #2c3e50;
             border-color: white;
         }
+        @media (max-width: 600px) {
+            header {
+                padding: 20px 15px;
+            }
+            .container {
+                padding: 15px;
+            }
+        }
+        footer {
+            background-color: var(--header-bg);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        footer h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+        }
+        footer p {
+            margin: 0;
+            opacity: 0.8;
+        }
     </style>
 </head>
 <body>
@@ -101,6 +153,7 @@
         </div>
         <p data-i18n="subtitle">La versión moderna de un clásico</p>
         <div class="lang-buttons">
+            <button class="lang-btn" id="theme-toggle" title="Cambiar tema">🌙</button>
             <button class="lang-btn" onclick="setLanguage('en')">English</button>
             <button class="lang-btn" onclick="setLanguage('es')">Español</button>
             <button class="lang-btn" onclick="setLanguage('fr')">Français</button>
@@ -108,6 +161,7 @@
         </div>
     </header>
 
+    <div class="container">
     <div class="banner">
         <img src="./img/GRAFICO DE FUNCIONES.jpg" alt="Gráfico de funciones InvadersPlay">
     </div>
@@ -147,6 +201,12 @@
             <p data-i18n="graphics_p2">Los movimientos de los enemigos, las explosiones y los disparos cuentan con animaciones optimizadas que aportan fluidez sin saturar la pantalla. La interfaz, clara y minimalista, asegura una navegación sencilla y una experiencia visual agradable tanto en teléfonos Andoid .</p>
         </section>
     </main>
+    </div>
+
+    <footer>
+        <h3>Invadersplay</h3>
+        <p>&copy; <span id="year"></span> <span data-i18n="footer_rights">Todos los derechos reservados</span></p>
+    </footer>
 
     <script>
         const translations = {
@@ -168,7 +228,8 @@
                 modes_outro: "These modes allow the game to be enjoyable for both casual players and those looking to break records and face increasingly difficult challenges.",
                 graphics_title: "Modernized retro graphics",
                 graphics_p1: "The visual style combines the charm of pixel art with smoother effects and vibrant colors that look perfect on current screens. It is not a simple tribute: it is a visual reinterpretation that respects the original aesthetic while offering a cleaner, dynamic, and attractive look.",
-                graphics_p2: "Enemy movements, explosions, and shots feature optimized animations that provide fluidity without saturating the screen. The clear and minimalist interface ensures simple navigation and a pleasant visual experience on both phones android."
+                graphics_p2: "Enemy movements, explosions, and shots feature optimized animations that provide fluidity without saturating the screen. The clear and minimalist interface ensures simple navigation and a pleasant visual experience on both phones android.",
+                footer_rights: "All rights reserved"
             },
             es: {
                 subtitle: "La versión moderna de un clásico",
@@ -188,7 +249,8 @@
                 modes_outro: "Estos modos permiten que el juego sea disfrutable tanto por jugadores casuales como por quienes buscan superar marcas y afrontar retos cada vez más difíciles.",
                 graphics_title: "Gráficos retro modernizados",
                 graphics_p1: "El estilo visual combina el encanto del pixel art con efectos más suaves y colores vibrantes que lucen perfecto en pantallas actuales. No es un simple homenaje: es una reinterpretación visual que respeta la estética original mientras ofrece un aspecto más limpio, dinámico y atractivo.",
-                graphics_p2: "Los movimientos de los enemigos, las explosiones y los disparos cuentan con animaciones optimizadas que aportan fluidez sin saturar la pantalla. La interfaz, clara y minimalista, asegura una navegación sencilla y una experiencia visual agradable tanto en teléfonos como en tabletas."
+                graphics_p2: "Los movimientos de los enemigos, las explosiones y los disparos cuentan con animaciones optimizadas que aportan fluidez sin saturar la pantalla. La interfaz, clara y minimalista, asegura una navegación sencilla y una experiencia visual agradable en teléfonos.",
+                footer_rights: "Todos los derechos reservados"
             },
             fr: {
                 subtitle: "La version moderne d'un classique",
@@ -208,7 +270,8 @@
                 modes_outro: "Ces modes permettent au jeu d'être agréable tant pour les joueurs occasionnels que pour ceux qui cherchent à battre des records et à relever des défis de plus en plus difficiles.",
                 graphics_title: "Graphismes rétro modernisés",
                 graphics_p1: "Le style visuel combine le charme du pixel art avec des effets plus doux et des couleurs vibrantes qui sont parfaits sur les écrans actuels. Ce n'est pas un simple hommage : c'est une réinterprétation visuelle qui respecte l'esthétique originale tout en offrant un aspect plus propre, dynamique et attrayant.",
-                graphics_p2: "Les mouvements des ennemis, les explosions et les tirs bénéficient d'animations optimisées qui apportent de la fluidité sans saturer l'écran. L'interface, claire et minimaliste, assure une navigation simple et une expérience visuelle agréable tant sur les téléphones que sur les android."
+                graphics_p2: "Les mouvements des ennemis, les explosions et les tirs bénéficient d'animations optimisées qui apportent de la fluidité sans saturer l'écran. L'interface, claire et minimaliste, assure une navigation simple et une expérience visuelle agréable tant sur les téléphones que sur les android.",
+                footer_rights: "Tous droits réservés"
             },
             ja: {
                 subtitle: "クラシックの現代版",
@@ -228,7 +291,8 @@
                 modes_outro: "これらのモードにより、カジュアルなプレイヤーから記録を更新し、ますます困難な課題に直面しようとするプレイヤーまで、ゲームを楽しむことができます。",
                 graphics_title: "現代化されたレトログラフィック",
                 graphics_p1: "ビジュアルスタイルは、ピクセルアートの魅力と、現在の画面で完璧に見えるよりスムーズな効果と鮮やかな色を組み合わせています。単なるオマージュではありません。オリジナルの美学を尊重しながら、よりクリーンでダイナミックで魅力的な外観を提供する視覚的な再解釈です。",
-                graphics_p2: "敵の動き、爆発、ショットには、画面を飽和させることなく流動性を提供する最適化されたアニメーションがあります。明確でミニマリストなインターフェースにより、携帯電話とタブレットの両方で簡単なナビゲーションと快適な視覚体験が保証されます。"
+                graphics_p2: "敵の動き、爆発、ショットには、画面を飽和させることなく流動性を提供する最適化されたアニメーションがあります。明確でミニマリストなインターフェースにより、携帯電話で簡単なナビゲーションと快適な視覚体験が保証されます。",
+                footer_rights: "全著作権所有"
             }
         };
 
@@ -253,6 +317,23 @@
         // Establecer inglés por defecto al cargar
         document.addEventListener('DOMContentLoaded', () => {
             setLanguage('en');
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            // Lógica del Modo Oscuro
+            const themeToggle = document.getElementById('theme-toggle');
+            const savedTheme = localStorage.getItem('theme');
+
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+                themeToggle.textContent = '☀️';
+            }
+
+            themeToggle.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+                const isDark = document.body.classList.contains('dark-mode');
+                themeToggle.textContent = isDark ? '☀️' : '🌙';
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            });
         });
     </script>
 </body>
