@@ -186,6 +186,27 @@
             background-color: #00FF41;
             color: #000;
         }
+        .game-container iframe {
+            max-width: 100%;
+        }
+        .google-play-btn {
+            display: inline-block;
+            padding: 12px 25px;
+            margin-top: 15px;
+            background-color: transparent;
+            color: #42A5F5; /* Un azul similar a Google Play */
+            border: 2px solid #42A5F5;
+            text-decoration: none;
+            font-family: monospace;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .google-play-btn:hover {
+            background-color: #42A5F5;
+            color: #000;
+            box-shadow: 0 0 15px #42A5F5;
+        }
     </style>
 </head>
 <body>
@@ -222,6 +243,11 @@
                 <!-- Asegúrate de reemplazar "TU_LINK_DE_DESCARGA_APK" con el enlace real -->
                 <a href="https://joetro.itch.io/invaderspace" class="download-apk-btn">
                     DOWNLOAD FULL ANDROID APK
+                </a>
+
+                <!-- Botón de Google Play -->
+                <!-- IMPORTANTE: Reemplaza "#" con el enlace real a tu app en Google Play -->
+                <a href="https://play.google.com/store/apps/details?id=com.jossinvaplay" class="google-play-btn" data-i18n="google_play_promo" target="_blank">
                 </a>
             </div>
         </div>
@@ -291,7 +317,8 @@
                 graphics_p1: "The visual style combines the charm of pixel art with smoother effects and vibrant colors that look perfect on current screens. It is not a simple tribute: it is a visual reinterpretation that respects the original aesthetic while offering a cleaner, dynamic, and attractive look.",
                 graphics_p2: "Enemy movements, explosions, and shots feature optimized animations that provide fluidity without saturating the screen. The clear and minimalist interface ensures simple navigation and a pleasant visual experience on both phones android.",
                 footer_rights: "All rights reserved",
-                privacy_policy: "Privacy Policy"
+                privacy_policy: "Privacy Policy",
+                google_play_promo: "Also available on the Google Play Store"
             },
             es: {
                 subtitle: "La versión moderna de un clásico",
@@ -313,7 +340,8 @@
                 graphics_p1: "El estilo visual combina el encanto del pixel art con efectos más suaves y colores vibrantes que lucen perfecto en pantallas actuales. No es un simple homenaje: es una reinterpretación visual que respeta la estética original mientras ofrece un aspecto más limpio, dinámico y atractivo.",
                 graphics_p2: "Los movimientos de los enemigos, las explosiones y los disparos cuentan con animaciones optimizadas que aportan fluidez sin saturar la pantalla. La interfaz, clara y minimalista, asegura una navegación sencilla y una experiencia visual agradable en teléfonos.",
                 footer_rights: "Todos los derechos reservados",
-                privacy_policy: "Política de Privacidad"
+                privacy_policy: "Política de Privacidad",
+                google_play_promo: "También disponible en la Google Play Store"
             },
             fr: {
                 subtitle: "La version moderne d'un classique",
@@ -335,7 +363,8 @@
                 graphics_p1: "Le style visuel combine le charme du pixel art avec des effets plus doux et des couleurs vibrantes qui sont parfaits sur les écrans actuels. Ce n'est pas un simple hommage : c'est une réinterprétation visuelle qui respecte l'esthétique originale tout en offrant un aspect plus propre, dynamique et attrayant.",
                 graphics_p2: "Les mouvements des ennemis, les explosions et les tirs bénéficient d'animations optimisées qui apportent de la fluidité sans saturer l'écran. L'interface, claire et minimaliste, assure une navigation simple et une expérience visuelle agréable tant sur les téléphones que sur les android.",
                 footer_rights: "Tous droits réservés",
-                privacy_policy: "Politique de Confidentialité"
+                privacy_policy: "Politique de Confidentialité",
+                google_play_promo: "Aussi disponible sur le Google Play Store"
             },
             ja: {
                 subtitle: "クラシックの現代版",
@@ -357,7 +386,8 @@
                 graphics_p1: "ビジュアルスタイルは、ピクセルアートの魅力と、現在の画面で完璧に見えるよりスムーズな効果と鮮やかな色を組み合わせています。単なるオマージュではありません。オリジナルの美学を尊重しながら、よりクリーンでダイナミックで魅力的な外観を提供する視覚的な再解釈です。",
                 graphics_p2: "敵の動き、爆発、ショットには、画面を飽和させることなく流動性を提供する最適化されたアニメーションがあります。明確でミニマリストなインターフェースにより、携帯電話で簡単なナビゲーションと快適な視覚体験が保証されます。",
                 footer_rights: "全著作権所有",
-                privacy_policy: "プライバシーポリシー"
+                privacy_policy: "プライバシーポリシー",
+                google_play_promo: "Google Playストアでも入手可能"
             }
         };
 
