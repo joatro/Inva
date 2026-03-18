@@ -22,7 +22,9 @@ const translations = {
         privacy_policy: "Privacy Policy",
         google_play_promo: "Also available on the Google Play Store",
         get_full_version: "&gt; GET THE FULL VERSION",
-        more_info: "More Information"
+        more_info: "More Information",
+        demo_title: "&gt; ONLINE DEMO: INITIATE MISSION",
+        download_apk: "DOWNLOAD FULL ANDROID APK"
     },
     es: {
         subtitle: "La versión moderna de un clásico",
@@ -47,7 +49,9 @@ const translations = {
         privacy_policy: "Política de Privacidad",
         google_play_promo: "También disponible en la Google Play Store",
         get_full_version: "&gt; OBTÉN LA VERSIÓN COMPLETA",
-        more_info: "Más Información"
+        more_info: "Más Información",
+        demo_title: "&gt; DEMO ONLINE: INICIAR MISIÓN",
+        download_apk: "DESCARGAR APK COMPLETA (ANDROID)"
     },
     fr: {
         subtitle: "La version moderne d'un classique",
@@ -72,7 +76,9 @@ const translations = {
         privacy_policy: "Politique de Confidentialité",
         google_play_promo: "Aussi disponible sur le Google Play Store",
         get_full_version: "&gt; OBTENEZ LA VERSION COMPLÈTE",
-        more_info: "Plus d'informations"
+        more_info: "Plus d'informations",
+        demo_title: "&gt; DÉMO EN LIGNE : LANCER LA MISSION",
+        download_apk: "TÉLÉCHARGER L'APK COMPLET (ANDROID)"
     },
     ja: {
         subtitle: "クラシックの現代版",
@@ -97,7 +103,9 @@ const translations = {
         privacy_policy: "プライバシーポリシー",
         google_play_promo: "Google Playストアでも入手可能",
         get_full_version: "&gt; 完全版を入手",
-        more_info: "詳細情報"
+        more_info: "詳細情報",
+        demo_title: "&gt; オンラインデモ：ミッション開始",
+        download_apk: "Android完全版APKをダウンロード"
     }
 };
 
