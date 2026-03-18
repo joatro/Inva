@@ -1,0 +1,311 @@
+:root {
+    --bg-color: #f4f4f9;
+    --text-color: #333;
+    --header-bg: #2c3e50;
+    --card-bg: white;
+    --accent-color: #3498db;
+    --heading-color: #2c3e50;
+    --main-bg: white;
+    /* Variables Tema Juego (Modo Claro - Azul estilo Google Play) */
+    --game-accent-color: #42A5F5;
+    --game-container-bg: #050a10; /* Negro con tinte azul muy oscuro */
+}
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --header-bg: #1a252f;
+    --card-bg: #1e1e1e;
+    --accent-color: #5dade2;
+    --heading-color: #5dade2;
+    --main-bg: linear-gradient(to bottom, #2c3e50, #000000);
+    /* Variables Tema Juego (Modo Oscuro - Verde Neón clásico) */
+    --game-accent-color: #00FF41;
+    --game-container-bg: #020d02; /* Negro con tinte verde muy oscuro */
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin: 0;
+    background-color: var(--bg-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: var(--header-bg);
+    color: white;
+    padding: 30px;
+}
+h1 {
+    margin: 0;
+    font-size: clamp(2rem, 5vw, 3.5em);
+}
+h2 {
+    color: var(--heading-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+    margin-top: 30px;
+}
+p {
+    margin-bottom: 15px;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+li {
+    background: var(--card-bg);
+    margin: 10px 0;
+    padding: 15px;
+    border-left: 5px solid var(--accent-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+strong {
+    color: var(--accent-color);
+}
+.banner {
+    margin-bottom: 40px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+main {
+    background: var(--main-bg);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.header-title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.logo {
+    width: clamp(60px, 15vw, 100px);
+    height: auto;
+    margin-right: clamp(15px, 3vw, 30px);
+    border-radius: 15px;
+}
+.lang-buttons {
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.lang-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+}
+.lang-btn:hover, .lang-btn.active {
+    background: white;
+    color: #2c3e50;
+    border-color: white;
+}
+@media (max-width: 600px) {
+    header {
+        padding: 20px 15px;
+    }
+    .container {
+        padding: 15px;
+    }
+}
+footer {
+    background-color: var(--header-bg);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+footer h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+}
+footer p {
+    margin: 0;
+    opacity: 0.8;
+}
+footer a {
+    color: white;
+    opacity: 0.8;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+footer a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+/* Estilos para la sección del juego (Demo) */
+.game-container {
+    text-align: center;
+    background-color: var(--game-container-bg);
+    padding: 20px;
+    border: 2px solid var(--game-accent-color);
+    border-radius: 15px;
+    box-shadow: 0 0 20px var(--game-accent-color);
+    margin-bottom: 40px;
+    transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+.game-title {
+    color: var(--game-accent-color);
+    font-family: monospace;
+    text-shadow: 0 0 10px var(--game-accent-color);
+    border: none;
+    margin-top: 0;
+}
+.download-apk-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: transparent;
+    color: var(--game-accent-color);
+    border: 2px solid var(--game-accent-color);
+    text-decoration: none;
+    font-family: monospace;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.download-apk-btn:hover {
+    background-color: var(--game-accent-color);
+    color: #000;
+}
+
+/* Contenedor para hacer el iframe responsivo manteniendo la proporción */
+.iframe-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    /* Proporción 16:9 (9 / 16 = 0.5625). Cambia 56.25% a 75% para 4:3 */
+    padding-top: 56.25%; 
+    background-color: #000;
+    border-radius: 8px; /* Opcional: para redondear las esquinas */
+}
+.iframe-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+.google-play-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    margin-top: 15px;
+    background-color: transparent;
+    color: var(--game-accent-color);
+    border: 2px solid var(--game-accent-color);
+    text-decoration: none;
+    font-family: monospace;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.google-play-btn:hover {
+    background-color: var(--game-accent-color);
+    color: #000;
+    box-shadow: 0 0 15px var(--game-accent-color);
+}
+
+/* Nuevas clases para reemplazar estilos inline */
+.game-downloads-section {
+    margin-top: 40px; 
+    padding-top: 20px; 
+    border-top: 1px solid var(--game-accent-color);
+}
+.game-downloads-title {
+    color: var(--game-accent-color); 
+    font-family: monospace; 
+    font-size: 1.1em; 
+    margin-bottom: 25px;
+}
+
+/* === Estilos para las Capturas Laterales === */
+.demo-wrapper {
+    /* Ya no necesita ser flex porque las imágenes se movieron al sidebar */
+    width: 100%;
+    display: block;
+}
+
+.side-screenshot {
+    /* Ajustes para que se vean bien dentro del sidebar */
+    display: block;
+    width: 100%; /* Llenan el ancho del sidebar */
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid var(--game-accent-color);
+    box-shadow: 0 0 10px var(--game-accent-color);
+    opacity: 0.8;
+    transition: opacity 0.3s;
+    margin-bottom: 15px; /* Espacio entre imágenes */
+}
+
+.side-screenshot:hover {
+    opacity: 1;
+}
+
+/* Estilos base para el sidebar (oculto en móvil por defecto o debajo) */
+.sidebar {
+    display: none; /* Ocultar en móviles para simplificar */
+    flex-direction: column;
+    gap: 15px; /* Espacio entre elementos del sidebar */
+    background: var(--main-bg);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border: 1px solid var(--game-accent-color);
+}
+
+/* En pantallas grandes (PC), mostramos las imágenes y ensanchamos el contenedor */
+@media (min-width: 1100px) {
+    .container {
+        max-width: 1600px; /* Aumentamos ancho para incluir sidebar */
+        display: flex; /* Activar columnas */
+        align-items: stretch; /* Estirar items para que sidebar tenga misma altura visual */
+        gap: 30px; /* Espacio entre contenido y sidebar */
+    }
+    
+    .content-column {
+        flex: 1; /* Toma el espacio disponible */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centra el demo y el main en su columna */
+    }
+
+    .sidebar {
+        display: block;
+        width: 300px; /* Ancho fijo para el aside */
+        flex-shrink: 0; /* No se encoge */
+    }
+    
+    /* Igualar el ancho del demo al del texto principal */
+    .demo-wrapper {
+        max-width: 800px;
+        width: 100%;
+    }
+
+    /* Mantener el texto central (main) estrecho para lectura cómoda */
+    main {
+        max-width: 800px;
+        width: 100%; /* Asegura que llene el ancho si es menor a 800px */
+        /* margin: 0 auto; Ya no es necesario auto margin si align-items center está en content-column */
+    }
+}
