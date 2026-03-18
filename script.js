@@ -20,7 +20,9 @@ const translations = {
         graphics_p2: "Enemy movements, explosions, and shots feature optimized animations that provide fluidity without saturating the screen. The clear and minimalist interface ensures simple navigation and a pleasant visual experience on both phones android.",
         footer_rights: "All rights reserved",
         privacy_policy: "Privacy Policy",
-        google_play_promo: "Also available on the Google Play Store"
+        google_play_promo: "Also available on the Google Play Store",
+        get_full_version: "&gt; GET THE FULL VERSION",
+        more_info: "More Information"
     },
     es: {
         subtitle: "La versión moderna de un clásico",
@@ -43,7 +45,9 @@ const translations = {
         graphics_p2: "Los movimientos de los enemigos, las explosiones y los disparos cuentan con animaciones optimizadas que aportan fluidez sin saturar la pantalla. La interfaz, clara y minimalista, asegura una navegación sencilla y una experiencia visual agradable en teléfonos.",
         footer_rights: "Todos los derechos reservados",
         privacy_policy: "Política de Privacidad",
-        google_play_promo: "También disponible en la Google Play Store"
+        google_play_promo: "También disponible en la Google Play Store",
+        get_full_version: "&gt; OBTÉN LA VERSIÓN COMPLETA",
+        more_info: "Más Información"
     },
     fr: {
         subtitle: "La version moderne d'un classique",
@@ -66,7 +70,9 @@ const translations = {
         graphics_p2: "Les mouvements des ennemis, les explosions et les tirs bénéficient d'animations optimisées qui apportent de la fluidité sans saturer l'écran. L'interface, claire et minimaliste, assure une navigation simple et une expérience visuelle agréable tant sur les téléphones que sur les android.",
         footer_rights: "Tous droits réservés",
         privacy_policy: "Politique de Confidentialité",
-        google_play_promo: "Aussi disponible sur le Google Play Store"
+        google_play_promo: "Aussi disponible sur le Google Play Store",
+        get_full_version: "&gt; OBTENEZ LA VERSION COMPLÈTE",
+        more_info: "Plus d'informations"
     },
     ja: {
         subtitle: "クラシックの現代版",
@@ -89,7 +95,9 @@ const translations = {
         graphics_p2: "敵の動き、爆発、ショットには、画面を飽和させることなく流動性を提供する最適化されたアニメーションがあります。明確でミニマリストなインターフェースにより、携帯電話で簡単なナビゲーションと快適な視覚体験が保証されます。",
         footer_rights: "全著作権所有",
         privacy_policy: "プライバシーポリシー",
-        google_play_promo: "Google Playストアでも入手可能"
+        google_play_promo: "Google Playストアでも入手可能",
+        get_full_version: "&gt; 完全版を入手",
+        more_info: "詳細情報"
     }
 };
 
