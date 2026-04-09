@@ -24,7 +24,8 @@ const translations = {
         get_full_version: "&gt; GET THE FULL VERSION",
         more_info: "More Information",
         demo_title: "&gt; ONLINE DEMO: INITIATE MISSION",
-        download_apk: "DOWNLOAD FULL ANDROID APK"
+        download_apk: "DOWNLOAD FULL ANDROID APK",
+        next_game_desc: "While you enjoy playing InvadersPlay, Spaceship version 2.5D is already in production with unique and advanced features: real-time AI voices, ships, pilots, missions, etc. Get familiar with game strategies with InvadersPlay, already available for the most common platforms."
     },
     es: {
         subtitle: "La versión moderna de un clásico",
@@ -51,7 +52,8 @@ const translations = {
         get_full_version: "&gt; OBTÉN LA VERSIÓN COMPLETA",
         more_info: "Más Información",
         demo_title: "&gt; DEMO ONLINE: INICIAR MISIÓN",
-        download_apk: "DESCARGAR APK COMPLETA (ANDROID)"
+        download_apk: "DESCARGAR APK COMPLETA (ANDROID)",
+        next_game_desc: "Mientras disfrutas de jugar InvadersPlay, ya está en proceso de producción Spaceship versión 2.5D con funciones únicas y avanzadas: voces en tiempo real con la IA, naves, pilotos, misiones, etc. Familiarízate con las estrategias de los juegos con InvadersPlay, ya disponible para las plataformas más comunes."
     },
     fr: {
         subtitle: "La version moderne d'un classique",
@@ -78,7 +80,8 @@ const translations = {
         get_full_version: "&gt; OBTENEZ LA VERSION COMPLÈTE",
         more_info: "Plus d'informations",
         demo_title: "&gt; DÉMO EN LIGNE : LANCER LA MISSION",
-        download_apk: "TÉLÉCHARGER L'APK COMPLET (ANDROID)"
+        download_apk: "TÉLÉCHARGER L'APK COMPLET (ANDROID)",
+        next_game_desc: "Pendant que vous profitez d'InvadersPlay, la version 2.5D de Spaceship est déjà en cours de production avec des fonctionnalités uniques et avancées : voix d'IA en temps réel, vaisseaux, pilotes, missions, etc. Familiarisez-vous avec les stratégies de jeu avec InvadersPlay, déjà disponible pour les plateformes les plus courantes."
     },
     ja: {
         subtitle: "クラシックの現代版",
@@ -105,7 +108,8 @@ const translations = {
         get_full_version: "&gt; 完全版を入手",
         more_info: "詳細情報",
         demo_title: "&gt; オンラインデモ：ミッション開始",
-        download_apk: "Android完全版APKをダウンロード"
+        download_apk: "Android完全版APKをダウンロード",
+        next_game_desc: "InvadersPlayを楽しんでいる間に、ユニークで高度な機能を備えたSpaceshipバージョン2.5Dがすでに制作中です。リアルタイムのAI音声、宇宙船、パイロット、ミッションなどが含まれます。最も一般的なプラットフォームですでに利用可能なInvadersPlayで、ゲーム戦略に慣れておきましょう。"
     }
 };
 
