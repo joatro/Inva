@@ -16,7 +16,7 @@ const translations = {
         mode_infinite: "<strong>Infinite Mode:</strong> endless waves, ideal for those who want to test their endurance.",
         modes_outro: "These modes allow the game to be enjoyable for both casual players and those looking to break records and face increasingly difficult challenges.",
         graphics_title: "Modernized retro graphics",
-        graphics_p1: "The visual style combines the charm of pixel art with smoother effects and vibrant colors that look perfect on current screens. It is not a simple tribute: it is a visual reinterpretation that respects the original aesthetic while offering a cleaner, dynamic, and attractive look.",
+        graphics_p1: "The visual style combines the charm of pixel art with smoother effects and vibrant colors that look perfect on modern screens. It is not a simple tribute: it is a visual reinterpretation that respects the original aesthetic while offering a cleaner, dynamic, and attractive look.",
         graphics_p2: "Enemy movements, explosions, and shots feature optimized animations that provide fluidity without saturating the screen. The clear and minimalist interface ensures simple navigation and a pleasant visual experience on both phones android.",
         footer_rights: "All rights reserved",
         privacy_policy: "Privacy Policy",
@@ -124,8 +124,9 @@ function setLanguage(lang) {
 
     // Actualizar estado activo de botones
     document.querySelectorAll('.lang-btn').forEach(btn => {
+        const btnLang = btn.getAttribute('onclick')?.match(/'([^']+)'/)?.[1];
         btn.classList.remove('active');
-        if (btn.textContent.toLowerCase().includes(lang === 'ja' ? '日本' : (lang === 'en' ? 'english' : (lang === 'es' ? 'español' : 'français')))) {
+        if (btnLang === lang) {
             btn.classList.add('active');
         }
     });
