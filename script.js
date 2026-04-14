@@ -124,10 +124,8 @@ function setLanguage(lang) {
 
     // Actualizar estado activo de botones
     document.querySelectorAll('.lang-btn').forEach(btn => {
-        const btnLang = btn.getAttribute('onclick')?.match(/'([^']+)'/)?.[1];
-        btn.classList.remove('active');
-        if (btnLang === lang) {
-            btn.classList.add('active');
+        if (btn.dataset.lang) {
+            btn.classList.toggle('active', btn.dataset.lang === lang);
         }
     });
 }
