@@ -118,15 +118,19 @@ function setLanguage(lang) {
     elements.forEach(element => {
         const key = element.getAttribute('data-i18n');
         if (translations[lang] && translations[lang][key]) {
-            element.innerHTML = translations[lang][key];
+            // Si la traducción tiene HTML (como <strong>), usamos innerHTML, si no textContent
+            if (translations[lang][key].includes('<')) {
+                element.innerHTML = translations[lang][key];
+            } else {
+                element.textContent = translations[lang][key];
+            }
         }
     });
 
-    // Actualizar estado activo de botones
+    // Actualizar estado activo de los botones de idioma
     document.querySelectorAll('.lang-btn').forEach(btn => {
-        if (btn.dataset.lang) {
-            btn.classList.toggle('active', btn.dataset.lang === lang);
-        }
+        const btnLang = btn.getAttribute('data-lang');
+        if (btnLang) btn.classList.toggle('active', btnLang === lang);
     });
 
     // Guardar preferencia de idioma
@@ -135,12 +139,19 @@ function setLanguage(lang) {
 
 // Establecer inglés por defecto al cargar
 document.addEventListener('DOMContentLoaded', () => {
+    // 1. Cargar Idioma
     const savedLang = localStorage.getItem('language') || 'en';
     setLanguage(savedLang);
 
+    // Configurar listeners para botones de idioma (evita usar onclick en HTML)
+    document.querySelectorAll('.lang-btn[data-lang]').forEach(btn => {
+        btn.addEventListener('click', () => setLanguage(btn.getAttribute('data-lang')));
+    });
+
+    // 2. Año del footer
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Lógica del Modo Oscuro
+    // 3. Lógica del Modo Oscuro
     const themeToggle = document.getElementById('theme-toggle');
     const savedTheme = localStorage.getItem('theme');
 
