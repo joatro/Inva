@@ -17,7 +17,7 @@ const translations = {
         modes_outro: "These modes allow the game to be enjoyable for both casual players and those looking to break records and face increasingly difficult challenges.",
         graphics_title: "Modernized retro graphics",
         graphics_p1: "The visual style combines the charm of pixel art with smoother effects and vibrant colors that look perfect on modern screens. It is not a simple tribute: it is a visual reinterpretation that respects the original aesthetic while offering a cleaner, dynamic, and attractive look.",
-        graphics_p2: "Enemy movements, explosions, and shots feature optimized animations that provide fluidity without saturating the screen. The clear and minimalist interface ensures simple navigation and a pleasant visual experience on both phones android.",
+        graphics_p2: "Enemy movements, explosions, and shots feature optimized animations that provide fluidity without saturating the screen. The clear and minimalist interface ensures simple navigation and a pleasant visual experience on both phones Android.",
         footer_rights: "All rights reserved",
         privacy_policy: "Privacy Policy",
         google_play_promo: "Also available on the Google Play Store",
@@ -73,7 +73,7 @@ const translations = {
         modes_outro: "Ces modes permettent au jeu d'être agréable tant pour les joueurs occasionnels que pour ceux qui cherchent à battre des records et à relever des défis de plus en plus difficiles.",
         graphics_title: "Graphismes rétro modernisés",
         graphics_p1: "Le style visuel combine le charme du pixel art avec des effets plus doux et des couleurs vibrantes qui sont parfaits sur les écrans actuels. Ce n'est pas un simple hommage : c'est une réinterprétation visuelle qui respecte l'esthétique originale tout en offrant un aspect plus propre, dynamique et attrayant.",
-        graphics_p2: "Les mouvements des ennemis, les explosions et les tirs bénéficient d'animations optimisées qui apportent de la fluidité sans saturer l'écran. L'interface, claire et minimaliste, assure une navigation simple et une expérience visuelle agréable tant sur les téléphones que sur les android.",
+        graphics_p2: "Les mouvements des ennemis, les explosions et les tirs bénéficient d'animations optimisées qui apportent de la fluidité sans saturer l'écran. L'interface, claire et minimaliste, assure une navigation simple et une expérience visuelle agréable tant sur les téléphones que sur les Android.",
         footer_rights: "Tous droits réservés",
         privacy_policy: "Politique de Confidentialité",
         google_play_promo: "Aussi disponible sur le Google Play Store",
@@ -128,11 +128,16 @@ function setLanguage(lang) {
             btn.classList.toggle('active', btn.dataset.lang === lang);
         }
     });
+
+    // Guardar preferencia de idioma
+    localStorage.setItem('language', lang);
 }
 
 // Establecer inglés por defecto al cargar
 document.addEventListener('DOMContentLoaded', () => {
-    setLanguage('en');
+    const savedLang = localStorage.getItem('language') || 'en';
+    setLanguage(savedLang);
+
     document.getElementById('year').textContent = new Date().getFullYear();
 
     // Lógica del Modo Oscuro
